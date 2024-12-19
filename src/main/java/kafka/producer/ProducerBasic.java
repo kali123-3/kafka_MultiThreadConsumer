@@ -15,8 +15,8 @@ public class ProducerBasic {
         properties.put("bootstrap.servers", "localhost:9092"); // Kafka broker
         properties.put("group.id", "test-group"); // Consumer group ID
         //the same now we have serializer not a desrializer conver java object to Table
-        properties.put("key.serializer", "org.apache.kafka.common.serialization.StringDeserializer");
-        properties.put("value.serializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("acks", "all");//Pour etre sur que mon messa
         Producer<String, String> producer = new KafkaProducer<>(properties);
 
